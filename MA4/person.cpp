@@ -23,7 +23,7 @@ void Person::setAge(int a){
 	age = a;
 	}
 
-int Person::getDecades(){
+double Person::getDecades(){
 	return age/10.0;
 	}
 
