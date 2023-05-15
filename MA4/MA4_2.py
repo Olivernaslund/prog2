@@ -11,6 +11,9 @@ def main():
 	print(f.getAge())
 	print(f.getDecades())
 
+	f.setAge(10)
+	print(f.fib)
+
 if __name__ == '__main__':
 	main()
 
