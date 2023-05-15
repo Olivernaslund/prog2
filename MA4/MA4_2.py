@@ -12,7 +12,7 @@ def main():
 	print(f.getDecades())
 
 	f.setAge(10)
-	print(f.fib(10))
+	#print(f.fib(10))
 
 if __name__ == '__main__':
 	main()
