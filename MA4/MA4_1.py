@@ -70,6 +70,7 @@ def main():
     print(hypersphere(n,d)) #ca 29sec
     print(hypersphere_exact(n, d))
     print(hypersphere_time(n, d, 1, 10)) #ca 15 sec
+    print('test')
 
     
 
