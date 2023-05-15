@@ -6,7 +6,7 @@ class Person{
 		Person(int);
 		int getAge();
 		void setAge(int);
-		int fib(int);
+		int fib();
 		double getDecades();
 
 	private:
