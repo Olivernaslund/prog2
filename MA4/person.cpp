@@ -6,7 +6,7 @@ class Person{
 		Person(int);
 		int getAge();
 		void setAge(int);
-		int getDecades();
+		double getDecades();
 	private:
 		int age;
 	};
@@ -24,7 +24,7 @@ void Person::setAge(int a){
 	}
 
 int Person::getDecades(){
-	return age/10;
+	return age/10.0;
 	}
 
 
@@ -32,7 +32,7 @@ extern "C"{
 	Person* Person_new(int a) {return new Person(a);}
 	int Person_getAge(Person* person) {return person->getAge();}
 	void Person_setAge(Person* person, int a) {person->setAge(a);}
-	int Person_getDecades(Person* person) {return person->getDecades();}
+	double Person_getDecades(Person* person) {return person->getDecades();}
 	void Person_delete(Person* person){
 		if (person){
 			delete person;
