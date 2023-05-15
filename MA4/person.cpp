@@ -37,7 +37,7 @@ int Person::_fib(int n){
 	}
 
 	else {
-		return (fib(n-1) + fib(n-2));
+		return (_fib(n-1) + _fib(n-2));
 	}
 }
 
