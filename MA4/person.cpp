@@ -26,7 +26,7 @@ void Person::setAge(int a){
 	age = a;
 	}
 
-int Person::fib(int n){
+int Person::fib(){
 	return _fib(Person::getAge());
 
 }
