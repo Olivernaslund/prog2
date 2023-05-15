@@ -6,7 +6,9 @@ class Person{
 		Person(int);
 		int getAge();
 		void setAge(int);
+		int fib(int);
 		double getDecades();
+
 	private:
 		int age;
 	};
@@ -22,6 +24,14 @@ int Person::getAge(){
 void Person::setAge(int a){
 	age = a;
 	}
+
+int Person::fib(int n){
+	if (n<=1)
+		return n;
+
+	return (fib(n-1) + fib(n-2));
+}
+
 
 double Person::getDecades(){
 	return age/10.0;

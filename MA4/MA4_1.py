@@ -38,7 +38,7 @@ def hypersphere(n, d, r=1):
     vec_längder_in = list(filter(lambda x: x < 1, [functools.reduce(lambda x,y: x+y, map(lambda x: x**2, [random.uniform(0,1) for i in range(d)])) for e in range(n)])) 
     
     end = pc()
-    #print(vec_längder)
+    
     return (2**d)*len(vec_längder_in)/n, f'time: {round(end-start, 2)}'
 
 def hypersphere_time(n, d, r=1, processes=10):
