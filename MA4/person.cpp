@@ -51,7 +51,7 @@ extern "C"{
 	Person* Person_new(int a) {return new Person(a);}
 	int Person_getAge(Person* person) {return person->getAge();}
 	void Person_setAge(Person* person, int a) {person->setAge(a);}
-	int Person_fib(Person* person) {person->fib();}
+	int Person_fib(Person* person) {return person->fib();}
 	double Person_getDecades(Person* person) {return person->getDecades();}
 	void Person_delete(Person* person){
 		if (person){
