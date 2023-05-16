@@ -1,10 +1,8 @@
 import matplotlib.pyplot as plt
-import numpy as np 
 import random
 from time import perf_counter as pc
 from time import sleep as pause
 from math import pi, gamma
-from numpy import random
 import functools
 import concurrent.futures as future
 
@@ -58,13 +56,23 @@ def hypersphere_exact(n, d, r=1):
 
     
 def main():
-    #for i in [1000, 10000, 100000]:
-    #    print(f'pi = {pi_calc(i, True)} for n = {i}')
+    print('----Calculation of pi with graphs (MA4:1.1)----')
+    for i in [1000, 10000, 100000]:
+        print(f'pi = {pi_calc(i, True)} for n = {i}')
+
+    print('----Calculation hypersphere (MA4:1.2)----')
+    print('Calculation (n,d) = (100000, 2)', hypersphere(100000, 2))
+    print('Exact Calculation (n,d) = (100000, 2)', hypersphere_exact(100000, 2))
+    print('Calculation (n,d) = (100000, 11)', hypersphere(100000,11))
+    print('Exact Calculation (n,d) = (100000, 11)', hypersphere_exact(100000,11))
+
+    print('----Multiprocessing calculation hypersphere (MA4:1.3)----')
     n = 1000000 ; d = 11
-    print(hypersphere(n,d)) #ca 29sec
-    print(hypersphere_exact(n, d))
-    print(hypersphere_time(n, d, 1, 10)) #ca 15 sec
-    print('test')
+    print('Calculation hypersphere without multiprocessing: ', hypersphere(n,d)) #ca 29sec
+    print('Exact calculation hypersphere: ',hypersphere_exact(n, d))
+    print('Calculation hyperesphere with multiprocessing: ',hypersphere_time(n, d, 1, 10)) #ca 15 sec
+    
+    print('Done')
 
     
 

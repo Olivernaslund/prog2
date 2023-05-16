@@ -24,12 +24,12 @@ def fib(n):
 
 def main():
 	f = Person(50)
-	#print(f.getAge())
-	#print(f.getDecades())
-    #    
-	#f.setAge(51)
-	#print(f.getAge())
-	#print(f.getDecades())
+	print(f.getAge())
+	print(f.getDecades())
+        
+	f.setAge(51)
+	print(f.getAge())
+	print(f.getDecades())
 
 	#Testing fib_py and fib_numba for n [20,30]
 	result_time_py = [] ; result_fib_py = []
