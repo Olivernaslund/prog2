@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 from person import Person
+import fib*
+import fib_numba
 
 def main():
 	f = Person(50)
@@ -12,6 +14,9 @@ def main():
 	print(f.getDecades())
 
 	f.setAge(10)
+	print(f.fib())
+
+	f.setAge(32)
 	print(f.fib())
 
 if __name__ == '__main__':
