@@ -37,9 +37,8 @@ def hypersphere_time(n, d, r=1, processes=10):
         #results = []
         #for _ in range(processes):
         #    results.append(ex.submit(hypersphere, int(n/processes), d, r)) #använd map
-        results = ex.map(hypersphere, [d for i in range(processes)], [r for i in range(processes)])
-
-        results = [i.result() for i in results]
+        results = ex.map(hypersphere, [int(n/processes) for i in range(processes)], [d for i in range(processes)])
+        #results = [i.result() for i in results]
         results = [i[0] for i in results]
                 
 
