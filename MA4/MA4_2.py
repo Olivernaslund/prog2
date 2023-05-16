@@ -3,6 +3,8 @@ from person import Person
 import matplotlib.pyplot as plt
 import numba
 from numba import njit
+from time import perf_counter as pc
+import matplotlib.pyplot as plt
 
 
 @njit
@@ -29,13 +31,31 @@ def main():
 	#print(f.getAge())
 	#print(f.getDecades())
 
-	f.setAge(10)
-	print(f.fib())
+	#Testing fib_py and fib_numba for n [20,30]
+	result_time_py = [] ; result_fib_py
+	n = [i for i in range(20, 30, 1)]
+	for i in n:
+		start = pc()
+		result_fib = fib(i)
+		end = pc()
+		result_time_py.append(end - start)
+		result_fib_py.append(result_fib)
 
-	f.setAge(40)
-	print(f.fib())
+	result_time_numba = [] ; result_fib_py = []
+	for i in n:
+		start = pc()
+                result_fib = fib(i)
+                end = pc()
+     	        result_time_numba.append(end - start)
+                result_fib_numba.append(result_fib)
+	
+	plt.plot(n, result_time_py)
+
+	plt.xlabel('n')
+	plt.ylabel('time')
+	plt.savefig('prog2_MA4_plot1.png')	
 
 if __name__ == '__main__':
-	#main()
+	main()
 	
 
