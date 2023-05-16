@@ -16,7 +16,7 @@ def main():
 	f.setAge(10)
 	print(f.fib())
 
-	f.setAge(32)
+	f.setAge(40)
 	print(f.fib())
 
 if __name__ == '__main__':
