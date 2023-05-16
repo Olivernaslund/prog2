@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 from person import Person
-import fib*
-import fib_numba
+#import fib*
+#import fib_numba
 
 def main():
 	f = Person(50)
