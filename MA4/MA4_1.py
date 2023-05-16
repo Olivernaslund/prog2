@@ -28,18 +28,12 @@ def pi_calc(n, plot=False):
     return pie
 
 def hypersphere(n, d, r=1):
-    #random_coords = random.rand((-1,1), size = (d,n))**2
-    #vec_längder = [functools.reduce(lambda x,y: x**2 + y**2, [random.uniform(0,1) for i in range(d)]) for e in range(n)]
     start = pc()
-    #vec_längder = [functools.reduce(lambda x,y: x**2 + y**2, [random.uniform(0,1) for i in range(d)]) for e in range(n)] 
-    #vec_längder = [functools.reduce(lambda x,y: x+y, map(lambda x: x**2, [random.uniform(0,1) for i in range(d)])) for e in range(n)] 
-    #vec_längder = [sum([random.uniform(0,1)**2 for i in range(d)]) for e in range(n)] 
-    #vec_längder_in = list(filter(lambda x: x < 1, vec_längder))             #[i for i in vec_längder if i < 1]
     vec_längder_in = list(filter(lambda x: x < 1, [functools.reduce(lambda x,y: x+y, map(lambda x: x**2, [random.uniform(0,1) for i in range(d)])) for e in range(n)])) 
-    
     end = pc()
     
     return (2**d)*len(vec_längder_in)/n, f'time: {round(end-start, 2)}'
+
 
 def hypersphere_time(n, d, r=1, processes=10):
     start = pc()
