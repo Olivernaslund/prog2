@@ -31,6 +31,8 @@ def main():
 	print(f.getAge())
 	print(f.getDecades())
 
+
+def fib_test():
 	#Testing fib_py and fib_numba for n [20,30]
 	result_time_py = [] ; result_fib_py = []
 	result_time_numba = [] ; result_fib_numba = []
@@ -56,6 +58,7 @@ def main():
 	plt.legend()
 	plt.show()
 	plt.savefig('prog2_MA4_plot1.png')	
+
 
 	n = [i for i in range(30, 45, 1)]
 	result_time_py = [] ; result_time_numba = [] ; result_time_cpp = []
@@ -84,9 +87,11 @@ def main():
 	plt.ylabel('time')
 	plt.savefig('prog2_MA4_plot2.png')
 
-
+	
 
 if __name__ == '__main__':
 	main()
-	
-
+	#fib_test()
+	f = Person(47)	
+	print('Fib 47 c++', f.fib())
+	print('Fib 47 numba', fib_numba(47))
