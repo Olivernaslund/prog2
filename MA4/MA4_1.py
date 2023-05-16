@@ -13,11 +13,9 @@ def pi_calc(n, plot=False):
     for i in range(n):
         x = random.uniform(-1, 1) ; y = random.uniform(-1,1)
         if x**2 + y**2 <= 1:
-            punkter_in_x.append(x)
-            punkter_in_y.append(y)
+            punkter_in_x.append(x) ; punkter_in_y.append(y)
         elif x**2 + y**2 > 1:
-            punkter_ut_x.append(x)
-            punkter_ut_y.append(y)
+            punkter_ut_x.append(x) ; punkter_ut_y.append(y)
     pie = 4*len(punkter_in_x)/n
     if plot:
         plt.plot(punkter_in_x, punkter_in_y, 'ro', markersize = 4)
@@ -29,7 +27,6 @@ def hypersphere(n, d, r=1):
     start = pc()
     vec_längder_in = list(filter(lambda x: x < 1, [functools.reduce(lambda x,y: x+y, map(lambda x: x**2, [random.uniform(0,1) for i in range(d)])) for e in range(n)])) 
     end = pc()
-    
     return (2**d)*len(vec_längder_in)/n, f'time: {round(end-start, 2)}'
 
 
@@ -37,10 +34,10 @@ def hypersphere_time(n, d, r=1, processes=10):
     start = pc()
 
     with future.ProcessPoolExecutor() as ex:
-        results = []
-        for _ in range(processes):
-            results.append(ex.submit(hypersphere, int(n/processes), d, r))
-
+        #results = []
+        #for _ in range(processes):
+        #    results.append(ex.submit(hypersphere, int(n/processes), d, r)) #använd map
+        result = ex.map(hypersphere, [d for i in range(processes)], [r for i in range(processes)])
 
         results = [i.result() for i in results]
         results = [i[0] for i in results]
