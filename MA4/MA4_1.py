@@ -1,4 +1,4 @@
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import random
 from time import perf_counter as pc
 from time import sleep as pause
@@ -37,9 +37,8 @@ def hypersphere_time(n, d, r=1, processes=10):
         #results = []
         #for _ in range(processes):
         #    results.append(ex.submit(hypersphere, int(n/processes), d, r)) #använd map
-        results = ex.map(hypersphere, [d for i in range(processes)], [r for i in range(processes)])
-
-        results = [i.result() for i in results]
+        results = ex.map(hypersphere, [int(n/processes) for i in range(processes)], [d for i in range(processes)])
+        #results = [i.result() for i in results]
         results = [i[0] for i in results]
                 
 
@@ -53,9 +52,9 @@ def hypersphere_exact(n, d, r=1):
 
     
 def main():
-    print('----Calculation of pi with graphs (MA4:1.1)----')
-    for i in [1000, 10000, 100000]:
-        print(f'pi = {pi_calc(i, True)} for n = {i}')
+    #print('----Calculation of pi with graphs (MA4:1.1)----')
+    #for i in [1000, 10000, 100000]:
+    #    print(f'pi = {pi_calc(i, True)} for n = {i}')
 
     print('----Calculation hypersphere (MA4:1.2)----')
     print('Calculation (n,d) = (100000, 2)', hypersphere(100000, 2))
