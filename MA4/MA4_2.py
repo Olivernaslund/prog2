@@ -1,4 +1,12 @@
 #!/usr/bin/env python3
+"""
+Student: Oliver Näslund
+Mail: oliver.naslund@gmail.com
+Reviewed by: Hannah M
+Date reviewed: 16 Maj 2023
+"""
+
+
 from person import Person
 import matplotlib.pyplot as plt
 import numba

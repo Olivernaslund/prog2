@@ -1,3 +1,11 @@
+"""
+Student: Oliver Näslund
+Mail: oliver.naslund@gmail.com
+Reviewed by: Hannah M
+Date reviewed: 16 Maj 2023
+"""
+
+
 import matplotlib.pyplot as plt
 import random
 from time import perf_counter as pc

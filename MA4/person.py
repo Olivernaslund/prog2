@@ -1,4 +1,11 @@
 """ Python interface to the C++ Person class """
+"""
+Student: Oliver Näslund
+Mail: oliver.naslund@gmail.com
+Reviewed by: Hannah M
+Date reviewed: 16 Maj 2023
+"""
+
 import ctypes
 lib = ctypes.cdll.LoadLibrary('./libperson.so')
 
